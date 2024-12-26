@@ -1,0 +1,60 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Mountain Hotel",
+      "location": "Bengaluru",
+      "roomsAvailable": 8,
+      "availableRooms": null
+    },
+    {
+      "id": "2",
+      "name": "Celebrity Hotel",
+      "location": "Bengaluru",
+      "roomsAvailable": 10,
+      "availableRooms": null
+    },
+    {
+      "id": "3",
+      "name": "Mohmaya Hotel",
+      "location": "Bengaluru",
+      "roomsAvailable": 8
+    },
+    {
+      "id": "4",
+      "name": "Charminar Hotel",
+      "location": "Hydrabad",
+      "roomsAvailable": 4
+    },
+    {
+      "id": "5",
+      "name": "Marathi Hotel",
+      "location": "Pune",
+      "roomsAvailable": 2
+    },
+    {
+      "id": "6",
+      "name": "Bihari Hotel",
+      "location": "Patna",
+      "roomsAvailable": 3
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "hotelId": "2",
+      "name": "Celebrity Hotel",
+      "numRooms": 2,
+      "checkInDate": "2024-12-27",
+      "checkOutDate": "2024-12-31"
+    },
+    {
+      "id": "1",
+      "hotelId": "1",
+      "name": "Mountain Hotel",
+      "numRooms": 2,
+      "checkInDate": "2024-12-27",
+      "checkOutDate": "2024-12-28"
+    }
+  ]
+}
