@@ -40,7 +40,7 @@ describe('BookingsService', () => {
 
       jest.spyOn(hotelDataService, 'loadData').mockReturnValue(mockData);
 
-      const bookingDetails = { hotelId: '1', rooms: 2, checkInDate:'12/12/2024', checkOutDate:'15/12/2024'};
+      const bookingDetails = { hotelId: '1', numRooms: 2, checkInDate:'12/12/2024', checkOutDate:'15/12/2024'};
       const result = bookingsService.create(bookingDetails);
 
       expect(result).toBeTruthy();
@@ -59,7 +59,7 @@ describe('BookingsService', () => {
 
       jest.spyOn(hotelDataService, 'loadData').mockReturnValue(mockData);
 
-      const bookingDetails = { hotelId: '1', rooms: 2, checkInDate:'12/12/2024', checkOutDate:'15/12/2024'};
+      const bookingDetails = { hotelId: '1', numRooms: 2, checkInDate:'12/12/2024', checkOutDate:'15/12/2024'};
 
       expect(() => bookingsService.create(bookingDetails)).toThrow(
         'Not enough rooms available',
@@ -74,18 +74,18 @@ describe('BookingsService', () => {
           { id: '1', name: 'Grand Hotel', roomsAvailable: 5 },
         ],
         bookings: [
-          { id: 'b1', hotelId: '1', rooms: 2, userId: '123' },
+          { id: 'b1', hotelId: '1', numRooms: 2, userId: '123' },
         ],
       };
 
       jest.spyOn(hotelDataService, 'loadData').mockReturnValue(mockData);
 
-      const updatedDetails = { rooms: 3 };
+      const updatedDetails = { numRooms: 3 };
       const result = bookingsService.update('b1', updatedDetails);
 
       expect(result).toBeTruthy();
       expect(mockData.hotels[0].roomsAvailable).toBe(4);
-      expect(mockData.bookings[0].rooms).toBe(3);
+      expect(mockData.bookings[0].numRooms).toBe(3);
       expect(hotelDataService.saveData).toHaveBeenCalledWith(mockData);
     });
 

@@ -18,11 +18,11 @@ export class BookingsService {
     const data = this.hotelsService.loadData();
     const hotel = data.hotels.find(h => h.id === createBookingDto.hotelId);
 
-    if (!hotel || hotel.roomsAvailable < createBookingDto.rooms) {
+    if (!hotel || hotel.roomsAvailable < createBookingDto.numRooms) {
       throw new Error('Not enough rooms available');
     }
 
-    hotel.roomsAvailable = (hotel.roomsAvailable- createBookingDto.rooms);
+    hotel.roomsAvailable = (hotel.roomsAvailable- createBookingDto.numRooms);
     const newBooking: Booking = {
         id: (data.bookings.length + 1).toString(),
         ...createBookingDto,
@@ -44,11 +44,11 @@ export class BookingsService {
     const booking = data.bookings[bookingIndex];
     const hotel = data.hotels.find(h => h.id === booking.hotelId);
 
-    if (!hotel || hotel.roomsAvailable + booking.rooms < updateBookingDto.rooms) {
+    if (!hotel || hotel.roomsAvailable + booking.numRooms < updateBookingDto.numRooms) {
       throw new Error('Not enough rooms available to update booking');
     }
 
-    hotel.roomsAvailable += booking.rooms - updateBookingDto.rooms;
+    hotel.roomsAvailable += booking.numRooms - updateBookingDto.numRooms;
     data.bookings[bookingIndex] = { ...booking, ...updateBookingDto };
     this.hotelsService.saveData(data);
 
@@ -67,7 +67,7 @@ export class BookingsService {
     const hotel = data.hotels.find(h => h.id === booking.hotelId);
 
     if (hotel) {
-      hotel.roomsAvailable += booking.rooms;
+      hotel.roomsAvailable += booking.numRooms;
     }
 
     data.bookings.splice(bookingIndex, 1);

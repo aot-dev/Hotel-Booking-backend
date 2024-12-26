@@ -12,5 +12,5 @@ export class CreateBookingDto {
 
   @IsNumber()
   @Min(1)
-  rooms: number;
+  numRooms: number;
 }

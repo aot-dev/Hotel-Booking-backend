@@ -3,5 +3,5 @@ export class Booking {
     hotelId: string;
     checkInDate: string; 
     checkOutDate: string;
-    rooms: number;
+    numRooms: number;
   }
