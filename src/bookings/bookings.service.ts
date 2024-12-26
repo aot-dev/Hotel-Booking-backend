@@ -67,7 +67,7 @@ export class BookingsService {
     const hotel = data.hotels.find(h => h.id === booking.hotelId);
 
     if (hotel) {
-      hotel.roomsAvailable += booking.numRooms;
+      hotel.roomsAvailable = hotel.roomsAvailable + booking.numRooms;
     }
 
     data.bookings.splice(bookingIndex, 1);

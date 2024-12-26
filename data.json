@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Mountain Hotel",
       "location": "Bengaluru",
-      "roomsAvailable": 10
+      "roomsAvailable": 11
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "id": "3",
       "name": "Mohmaya Hotel",
       "location": "Bengaluru",
-      "roomsAvailable": 7
+      "roomsAvailable": 8
     },
     {
       "id": "4",
@@ -37,22 +37,5 @@
       "roomsAvailable": 3
     }
   ],
-  "bookings": [
-    {
-      "id": "1",
-      "hotelId": "1",
-      "name": "Mountain Hotel",
-      "numRooms": 1,
-      "checkInDate": "2024-12-26",
-      "checkOutDate": "2024-12-28"
-    },
-    {
-      "id": "2",
-      "hotelId": "3",
-      "name": "Mohmaya Hotel",
-      "numRooms": 1,
-      "checkInDate": "2024-12-27",
-      "checkOutDate": "2024-12-28"
-    }
-  ]
+  "bookings": []
 }

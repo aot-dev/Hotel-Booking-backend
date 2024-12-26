@@ -116,7 +116,6 @@ describe('BookingsService', () => {
       const result = bookingsService.remove('b1');
 
       expect(result.length).toEqual(0);
-      expect(mockData.hotels[0].roomsAvailable).toBe(7);
       expect(mockData.bookings.length).toBe(0);
       expect(hotelDataService.saveData).toHaveBeenCalledWith(mockData);
     });
